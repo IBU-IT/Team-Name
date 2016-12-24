@@ -3,20 +3,20 @@ package com.sis;
 import java.sql.*;
 
 public class ConnectionToDatabase {
+	
+	static final String user = "a158cb_oop";
+	static final String password = "adminadmin123";
+	static final String url = "jdbc:mysql://mysql5006.smarterasp.net:3306/db_a158cb_oop";
 
 	public static void main(String[] args) {
-
-		String user = "sql7146982";
-		String password = "SS2pTPI2Lz";
-		String url = "jdbc:mysql://sql7.freesqldatabase.com:3306/sql7146982";
 
 		try {
 
 			Connection con = DriverManager.getConnection(url, user, password);
 
-			int id = 0;
+			int id = 301015;
 
-			String query = " select * from Students where id=?";
+			String query = " select * from StudentsTable where id=?";
 
 			PreparedStatement stm = con.prepareStatement(query);
 			stm.setInt(1, id);
@@ -39,9 +39,7 @@ public class ConnectionToDatabase {
 
 	public void InsertInTable(String Name, String LastName, String Adress) {
 		try {
-			String user = "sql7146982";
-			String password = "SS2pTPI2Lz";
-			String url = "jdbc:mysql://sql7.freesqldatabase.com:3306/sql7146982";
+			
 
 			Connection con = DriverManager.getConnection(url, user, password);
 
@@ -62,6 +60,38 @@ public class ConnectionToDatabase {
 		} catch (Exception e) {
 			System.out.println("ERROR while inserting into table. " + e);
 		}
+	}
+	
+	public int RetriveFromDatabase(String query, int intFromTable){
+		int i = 0;
+		
+		try {
+
+			Connection con = DriverManager.getConnection(url, user, password);
+
+
+			// example of query: " select * from StudentsTable where id=?";
+
+			PreparedStatement stm = con.prepareStatement(query);
+			stm.setInt(1, intFromTable);
+			ResultSet rs = stm.executeQuery();
+ 
+			while (rs.next()) {
+				int ids = rs.getInt("id");
+				String firstName = rs.getString("Name");
+				String lastName = rs.getString("LastName");
+				String adress = rs.getString("Adress");
+
+				// print the results
+				System.out.format("%s, %s, %s, %s\n", ids, firstName, lastName, adress);
+				
+			}
+
+		} catch (Exception e) {
+			System.out.println("ERROR while retriving data from table. " + e);
+		}
+		
+		return i;
 	}
 
 }
