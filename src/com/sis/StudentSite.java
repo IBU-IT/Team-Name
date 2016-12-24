@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class StudentSite {
 
@@ -46,7 +47,7 @@ public class StudentSite {
 	private void initialize() {
 		frmLogin = new JFrame();
 		frmLogin.setTitle("Login");
-		frmLogin.setBounds(100, 100, 450, 300);
+		frmLogin.setBounds(100, 100, 458, 303);
 		frmLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmLogin.getContentPane().setLayout(null);
 		
@@ -60,7 +61,7 @@ public class StudentSite {
 		frmLogin.getContentPane().add(passwordTB);
 		passwordTB.setColumns(10);
 		
-		JLabel lblStudentid = new JLabel("StudentID");
+		JLabel lblStudentid = new JLabel("ID");
 		lblStudentid.setBounds(135, 98, 66, 14);
 		frmLogin.getContentPane().add(lblStudentid);
 		
@@ -90,5 +91,10 @@ public class StudentSite {
 		
 		submitBtn.setBounds(287, 209, 89, 23);
 		frmLogin.getContentPane().add(submitBtn);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\background.jpg"));
+		lblNewLabel.setBounds(0, 0, 442, 264);
+		frmLogin.getContentPane().add(lblNewLabel);
 	}
 }

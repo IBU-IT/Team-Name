@@ -156,6 +156,31 @@ public class StudentDashboard {
 			}
 		});
 		panel_1.add(lblDiscreteMathLession);
+		
+		JLabel lblGrades = new JLabel("Grades");
+		lblGrades.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblGrades.setBounds(76, 285, 70, 14);
+		frame.getContentPane().add(lblGrades);
+		
+		JLabel lblAcademics = new JLabel("Attendance");
+		lblAcademics.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblAcademics.setBounds(61, 310, 95, 14);
+		frame.getContentPane().add(lblAcademics);
+		
+		JLabel lblMessages = new JLabel("Messages");
+		lblMessages.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblMessages.setBounds(71, 335, 95, 14);
+		frame.getContentPane().add(lblMessages);
+		
+		JLabel lblHome = new JLabel("Home");
+		lblHome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblHome.setBounds(10, 86, 46, 14);
+		frame.getContentPane().add(lblHome);
+		
+		JLabel lblCalendar = new JLabel("Calendar");
+		lblCalendar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblCalendar.setBounds(76, 360, 70, 14);
+		frame.getContentPane().add(lblCalendar);
 
 	}
 
