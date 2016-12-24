@@ -37,7 +37,7 @@ public class ConnectionToDatabase {
 		}
 	}
 
-	public void InsertInTable(String Name, String LastName, String Adress) {
+	public void InsertInTable(String Name, String LastName, String Adress, String Password, int year, String department) {
 		try {
 			
 
@@ -63,6 +63,7 @@ public class ConnectionToDatabase {
 	}
 	
 	public int RetriveFromDatabase(String query, int intFromTable){
+		//to do
 		int i = 0;
 		
 		try {
