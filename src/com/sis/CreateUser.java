@@ -5,20 +5,32 @@ import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.List;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
 
 public class CreateUser {
 
@@ -27,18 +39,132 @@ public class CreateUser {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_7;
+	private Dictionary<String, String> dic;
+	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		MysqlDataSource dataSource = new MysqlDataSource();
+		dataSource.setUser("a15a98_student");
+		dataSource.setPassword("pogresno3");
+		dataSource.setServerName("mysql5006.smarterasp.net");
+		
+		try {
+			java.sql.Connection conn = dataSource.getConnection();
+			java.sql.Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from db_a15a98_student.student;");
+			
+			ResultSet rs1 = stmt.executeQuery("insert int db_a15a98_student.student;");
+			
+			while (rs.next()) {
+	            int id = rs.getInt("id");
+	            String price = rs.getString("firstanem");
+	           
+	            System.out.println(id + "\t" + price);
+	        }
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+		
+		Department Architecture = new Department("Architecture", 1);
+		Department Architecture2 = new Department("Architecture", 2);
+		Department Architecture3 = new Department("Architecture", 3);
+		Department Architecture4 = new Department("Architecture", 4);
+		Department Architecture5 = new Department("Architecture", 5);
+		
+		Course Drawings = new Course("Drawings I", Architecture);
+		Course ArhitecturalDesign = new Course("Arhitectural Design", Architecture);
+		Course ArhitecturalHistory = new Course("Arhitectural History", Architecture);
+		Course ArhitecturalStructures = new Course("Arhitectural Structures", Architecture);
+		Course StrengthofMaterials = new Course("Strength of Materials", Architecture);
+		
+		Course BasicDesign = new Course("Basic Design", Architecture2);
+		Course HistoryOfDesign = new Course("History Of Design", Architecture2);
+		Course ArhitecturalDesignII = new Course("Arhitectural Design II", Architecture2);
+		Course FreehandDrawing = new Course("Freehand Drawind", Architecture2);
+		Course BuildingMaterials = new Course("Building Materials", Architecture2);
+		
+		Course GraphicCommunication = new Course("GraphicCommunication", Architecture3);
+		Course BuildingTechnology = new Course("Building Technology", Architecture3);
+		Course ArhitecturalDesignIII = new Course("Arhitectural Design II", Architecture3);
+		Course DesignMethods = new Course("Design Methods", Architecture3);
+		Course Entrepreneurship = new Course("Entrepreneurship", Architecture3);
+		
+		Course StrengthofMaterialsII = new Course(" Strength of Materials II", Architecture4);
+		Course DesignMethodsII = new Course("Design Methods II", Architecture4);
+		Course ArhitecturalStructuresII = new Course("Arhitectural Structures II", Architecture4);
+		Course UrbanDesign = new Course("UrbanDesign", Architecture4);
+		Course BuildingMaterialsII = new Course("Building Materials II", Architecture4);
+		
+		Course CityPlaning = new Course("City Planing", Architecture5);
+		Course BuildingConstruction = new Course("Building Construction", Architecture5);
+		Course Structures = new Course("Structures", Architecture5);
+		Course ArhitecturalDesignIV = new Course("Arhitectural Design IV", Architecture5);
+		
+		
+		Department IT = new Department("IT", 1);
+		Department IT2 = new Department("IT", 2);
+		Department IT3 = new Department("IT", 3 );
+		Department IT4 = new Department("IT", 4 );
+		Department IT5 = new Department("IT", 5 );
+		
+		
+		Course ProgrammingI  = new Course("Programming I", IT);
+		Course CalculusI = new Course("Calculus I",IT);
+		Course TurkishLanguage = new Course("Turkish Language I",IT);
+		Course GeneralPhysics  = new Course("General Physics I", IT);
+		Course EnglishLanguageI = new Course ("English Language I",IT);
+		
+
+		Course ProgrammingII = new Course ("Programming II",IT2);
+		Course CalculusII = new Course ("Calculus II",IT2);
+		Course GeneralPhysicsII = new Course ("General Physics II",IT2);
+		Course TurskihLanguageII = new Course ("Turkish Language II",IT2);
+		Course EnglishLanguageII = new Course ("English Language II",IT2);
+		
+
+
+		Course DigitalDesign = new Course ("Digital Design",IT3);
+		Course DatabaseSystems = new Course ("Database System",IT3);
+		Course DiscreteMathematics = new Course ("Discrete Mathematics",IT3);
+		Course DifferentialEquations = new Course ("Differential Equations",IT3);
+		Course IndustrialTrainingI = new Course ("Industrial Training I",IT3);
+		
+		
+		
+		Course NumericalAnalysis= new Course ("Numerical Analysis",IT4);
+		Course ComputerOrganization = new Course ("Computer Organization",IT4);
+		Course ProgrammingLanguages = new Course ("Programming Languages",IT4);
+		Course DataStructures = new Course ("Data Structures",IT4);
+		
+		
+		Course OperatingSystems = new Course ("Operating Systems",IT5);
+		Course ComputerNetworks = new Course ("Computer Networks",IT5);
+		Course IndustrialTrainingII = new Course ("Industrial Training II",IT5);
+		Course MajorElectiveCourseI = new Course ("Major Elective Course I",IT5);
+		Course MajorElectiveCourseII  = new Course ("Major Elective Course II",IT5);
+		Course MajorElectiveCourseIII = new Course ("Major Elective Course III",IT5);
+		
+		
+
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
 					CreateUser window = new CreateUser();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -52,6 +178,7 @@ public class CreateUser {
 	 * Create the application.
 	 */
 	public CreateUser() {
+		
 		initialize();
 	}
 
@@ -86,12 +213,12 @@ public class CreateUser {
 		panel.add(lblSearch);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(71, 86, 520, 377);
+		panel_1.setBounds(83, 86, 520, 377);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel label_12 = new JLabel("");
-		label_12.setBounds(324, 39, 145, 121);
+		label_12.setBounds(324, 38, 145, 121);
 		panel_1.add(label_12);
 		
 		JLabel label = new JLabel("Student ID");
@@ -101,7 +228,7 @@ public class CreateUser {
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(126, 25, 127, 20);
+		textField.setBounds(126, 25, 159, 20);
 		panel_1.add(textField);
 		
 		JLabel label_1 = new JLabel("First name");
@@ -111,7 +238,7 @@ public class CreateUser {
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(126, 56, 127, 20);
+		textField_1.setBounds(126, 56, 159, 20);
 		panel_1.add(textField_1);
 		
 		JLabel label_2 = new JLabel("Last name");
@@ -121,7 +248,7 @@ public class CreateUser {
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(126, 87, 127, 20);
+		textField_2.setBounds(126, 87, 159, 20);
 		panel_1.add(textField_2);
 		
 		JLabel label_3 = new JLabel("Date of birth");
@@ -129,25 +256,24 @@ public class CreateUser {
 		label_3.setBounds(10, 124, 73, 14);
 		panel_1.add(label_3);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(126, 122, 127, 20);
-		panel_1.add(textField_3);
-		
 		JLabel label_4 = new JLabel("Gender");
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		label_4.setBounds(10, 149, 46, 14);
 		panel_1.add(label_4);
 		
-		JRadioButton radioButton = new JRadioButton("Male");
-		radioButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		radioButton.setBounds(126, 145, 52, 23);
-		panel_1.add(radioButton);
+		JRadioButton radioButtonMale = new JRadioButton("Male");
+		radioButtonMale.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		radioButtonMale.setBounds(126, 145, 52, 23);
+		panel_1.add(radioButtonMale);
 		
-		JRadioButton radioButton_1 = new JRadioButton("Female");
-		radioButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		radioButton_1.setBounds(180, 145, 73, 23);
-		panel_1.add(radioButton_1);
+		JRadioButton radioButtonFemale = new JRadioButton("Female");
+		radioButtonFemale.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		radioButtonFemale.setBounds(180, 145, 73, 23);
+		panel_1.add(radioButtonFemale);
+		
+		ButtonGroup group = new ButtonGroup();
+		group.add(radioButtonMale);
+		group.add(radioButtonFemale);
 		
 		JLabel label_5 = new JLabel("Email");
 		label_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -156,7 +282,7 @@ public class CreateUser {
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(126, 247, 127, 20);
+		textField_4.setBounds(126, 247, 159, 20);
 		panel_1.add(textField_4);
 		
 		JLabel label_6 = new JLabel("Phone");
@@ -166,7 +292,8 @@ public class CreateUser {
 		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
-		textField_5.setBounds(126, 272, 127, 20);
+		textField_5.setBounds(126, 272, 159, 20);
+		
 		panel_1.add(textField_5);
 		
 		JLabel label_7 = new JLabel("Address");
@@ -176,7 +303,7 @@ public class CreateUser {
 		
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
-		textField_7.setBounds(126, 297, 127, 20);
+		textField_7.setBounds(126, 297, 159, 20);
 		panel_1.add(textField_7);
 		
 		JLabel label_8 = new JLabel("Department");
@@ -184,15 +311,15 @@ public class CreateUser {
 		label_8.setBounds(10, 174, 73, 14);
 		panel_1.add(label_8);
 		
-		JLabel label_9 = new JLabel("Course");
-		label_9.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_9.setBounds(10, 199, 46, 14);
-		panel_1.add(label_9);
+		JLabel lblSemester = new JLabel("Semester");
+		lblSemester.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblSemester.setBounds(10, 199, 73, 14);
+		panel_1.add(lblSemester);
 		
-		JLabel label_10 = new JLabel("Semester");
-		label_10.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_10.setBounds(10, 224, 73, 14);
-		panel_1.add(label_10);
+		JLabel lblCourse = new JLabel("Course");
+		lblCourse.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblCourse.setBounds(10, 224, 73, 14);
+		panel_1.add(lblCourse);
 		
 		JLabel label_11 = new JLabel("");
 		label_11.setBounds(304, 132, -346, 30);
@@ -200,7 +327,7 @@ public class CreateUser {
 		
 		JButton button = new JButton("Add new");
 		button.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button.setBounds(126, 343, 89, 23);
+		button.setBounds(10, 343, 89, 23);
 		panel_1.add(button);
 		
 		JButton button_1 = new JButton("Update");
@@ -210,12 +337,17 @@ public class CreateUser {
 			}
 		});
 		button_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_1.setBounds(225, 343, 89, 23);
+		button_1.setBounds(109, 343, 89, 23);
 		panel_1.add(button_1);
 		
 		JButton button_2 = new JButton("Save");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// Ovdje ide onaj sql
+			}
+		});
 		button_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_2.setBounds(324, 343, 89, 23);
+		button_2.setBounds(208, 343, 89, 23);
 		panel_1.add(button_2);
 		
 		JButton button_3 = new JButton("Delete");
@@ -225,12 +357,12 @@ public class CreateUser {
 			}
 		});
 		button_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_3.setBounds(423, 343, 89, 23);
+		button_3.setBounds(304, 343, 89, 23);
 		panel_1.add(button_3);
 		
 		JButton button_4 = new JButton("Add picture");
 		button_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_4.setBounds(324, 171, 105, 23);
+		button_4.setBounds(387, 170, 105, 23);
 		panel_1.add(button_4);
 		
 		JLabel lblStudentForm = new JLabel("Student form");
@@ -238,21 +370,80 @@ public class CreateUser {
 		lblStudentForm.setBounds(10, 0, 96, 14);
 		panel_1.add(lblStudentForm);
 		
-		JComboBox comboDepartment = new JComboBox();
-		comboDepartment.setBounds(126, 175, 127, 20);
+		JComboBox<Integer> comboSemester = new JComboBox<Integer>();
+		comboSemester.setBounds(126, 197, 159, 20);
+		panel_1.add(comboSemester);
+
+		
+		JComboBox<String> comboDepartment = new JComboBox<String>();
+		comboDepartment.setBounds(126, 172, 159, 20);
 		panel_1.add(comboDepartment);
 		
-		List<String> ls = new ArrayList<String>(); 
-		ls.add("Architecture");
-		ls.add("etf");
-		comboDepartment.setModel(new DefaultComboBoxModel(ls.toArray()));
-		
-		JComboBox comboCourse = new JComboBox();
-		comboCourse.setBounds(126, 197, 127, 20);
+		JComboBox<String> comboCourse = new JComboBox<String>();
+		comboCourse.setBounds(126, 222, 159, 20);
 		panel_1.add(comboCourse);
+
+		comboDepartment.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String o = (String)comboDepartment.getSelectedItem();
+				comboCourse.setModel(new DefaultComboBoxModel(getCourseNames(o, (int)comboSemester.getSelectedItem()).toArray()));
+			}
+		});
 		
-		JComboBox comboSemester = new JComboBox();
-		comboSemester.setBounds(126, 222, 127, 20);
-		panel_1.add(comboSemester);
+		comboSemester.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				int o = (int)comboSemester.getSelectedItem();
+				comboDepartment.setModel(new DefaultComboBoxModel(getDepartmentNames(o).toArray()));
+				comboCourse.setModel(new DefaultComboBoxModel(getCourseNames((String)comboDepartment.getSelectedItem(),  (int)comboSemester.getSelectedItem()).toArray()));
+			}
+		});
+		
+		comboSemester.setModel(new DefaultComboBoxModel(Department.getSemestersArray().toArray()));
+		comboDepartment.setModel(new DefaultComboBoxModel(getDepartmentNames((int)comboSemester.getSelectedItem()).toArray()));
+		comboCourse.setModel(new DefaultComboBoxModel(getCourseNames((String)comboDepartment.getSelectedItem(), (int)comboSemester.getSelectedItem()).toArray()));
+
+		JButton btnCancel = new JButton("Cancel");
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			
+			}
+
+			
+		});
+		btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnCancel.setBounds(403, 343, 89, 23);
+		panel_1.add(btnCancel);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(126, 118, 159, 20);
+		panel_1.add(dateChooser);
+		
+	}
+	
+	private List<String> getDepartmentNames(int semester) {
+		List<Department> deps = Department.getDepartmentsBySemester(semester);
+		List<String> names = new ArrayList<String>();
+		
+		for (Department dep : deps) {
+			names.add(dep.getName());
+		}
+		
+		return names;
+	}
+	
+	private List<String> getCourseNames(String department, int semester) {
+		List<Course> courses = Course.getCoursesByDepartmentName(department, semester);
+		List<String> names = new ArrayList<String>();
+		
+		for (Course c : courses) {
+			names.add(c.getName());
+		}
+		
+		return names;
 	}
 }
