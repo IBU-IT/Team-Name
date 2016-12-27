@@ -50,31 +50,7 @@ public class CreateUser {
 	 */
 	public static void main(String[] args) {
 		
-		MysqlDataSource dataSource = new MysqlDataSource();
-		dataSource.setUser("a15a98_student");
-		dataSource.setPassword("pogresno3");
-		dataSource.setServerName("mysql5006.smarterasp.net");
 		
-		try {
-			java.sql.Connection conn = dataSource.getConnection();
-			java.sql.Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from db_a15a98_student.student;");
-			
-			ResultSet rs1 = stmt.executeQuery("insert int db_a15a98_student.student;");
-			
-			while (rs.next()) {
-	            int id = rs.getInt("id");
-	            String price = rs.getString("firstanem");
-	           
-	            System.out.println(id + "\t" + price);
-	        }
-			rs.close();
-			stmt.close();
-			conn.close();
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		
 		
 		
@@ -231,30 +207,30 @@ public class CreateUser {
 		textField.setBounds(126, 25, 159, 20);
 		panel_1.add(textField);
 		
-		JLabel label_1 = new JLabel("First name");
-		label_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_1.setBounds(10, 58, 73, 14);
-		panel_1.add(label_1);
+		JLabel firstNameLabel = new JLabel("First name");
+		firstNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		firstNameLabel.setBounds(10, 58, 73, 14);
+		panel_1.add(firstNameLabel);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(126, 56, 159, 20);
 		panel_1.add(textField_1);
 		
-		JLabel label_2 = new JLabel("Last name");
-		label_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_2.setBounds(10, 89, 73, 14);
-		panel_1.add(label_2);
+		JLabel lastNameLabel = new JLabel("Last name");
+		lastNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lastNameLabel.setBounds(10, 89, 73, 14);
+		panel_1.add(lastNameLabel);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		textField_2.setBounds(126, 87, 159, 20);
 		panel_1.add(textField_2);
 		
-		JLabel label_3 = new JLabel("Date of birth");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_3.setBounds(10, 124, 73, 14);
-		panel_1.add(label_3);
+		JLabel dateLabel = new JLabel("Date of birth");
+		dateLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		dateLabel.setBounds(10, 124, 73, 14);
+		panel_1.add(dateLabel);
 		
 		JLabel label_4 = new JLabel("Gender");
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -275,20 +251,20 @@ public class CreateUser {
 		group.add(radioButtonMale);
 		group.add(radioButtonFemale);
 		
-		JLabel label_5 = new JLabel("Email");
-		label_5.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_5.setBounds(10, 274, 46, 14);
-		panel_1.add(label_5);
+		JLabel emailLabel = new JLabel("Email");
+		emailLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		emailLabel.setBounds(10, 274, 46, 14);
+		panel_1.add(emailLabel);
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(126, 247, 159, 20);
 		panel_1.add(textField_4);
 		
-		JLabel label_6 = new JLabel("Phone");
-		label_6.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_6.setBounds(10, 299, 46, 14);
-		panel_1.add(label_6);
+		JLabel phoneLabel = new JLabel("Phone");
+		phoneLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		phoneLabel.setBounds(10, 299, 46, 14);
+		panel_1.add(phoneLabel);
 		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
@@ -296,30 +272,30 @@ public class CreateUser {
 		
 		panel_1.add(textField_5);
 		
-		JLabel label_7 = new JLabel("Address");
-		label_7.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_7.setBounds(10, 249, 46, 14);
-		panel_1.add(label_7);
+		JLabel addressLabel = new JLabel("Address");
+		addressLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		addressLabel.setBounds(10, 249, 46, 14);
+		panel_1.add(addressLabel);
 		
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
 		textField_7.setBounds(126, 297, 159, 20);
 		panel_1.add(textField_7);
 		
-		JLabel label_8 = new JLabel("Department");
-		label_8.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		label_8.setBounds(10, 174, 73, 14);
-		panel_1.add(label_8);
+		JLabel departmentLabel = new JLabel("Department");
+		departmentLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		departmentLabel.setBounds(10, 174, 73, 14);
+		panel_1.add(departmentLabel);
 		
-		JLabel lblSemester = new JLabel("Semester");
-		lblSemester.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblSemester.setBounds(10, 199, 73, 14);
-		panel_1.add(lblSemester);
+		JLabel semesterLabel = new JLabel("Semester");
+		semesterLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		semesterLabel.setBounds(10, 199, 73, 14);
+		panel_1.add(semesterLabel);
 		
-		JLabel lblCourse = new JLabel("Course");
-		lblCourse.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblCourse.setBounds(10, 224, 73, 14);
-		panel_1.add(lblCourse);
+		JLabel courseLabel = new JLabel("Course");
+		courseLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		courseLabel.setBounds(10, 224, 73, 14);
+		panel_1.add(courseLabel);
 		
 		JLabel label_11 = new JLabel("");
 		label_11.setBounds(304, 132, -346, 30);
@@ -343,7 +319,18 @@ public class CreateUser {
 		JButton button_2 = new JButton("Save");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// Ovdje ide onaj sql
+				
+				if (firstNameLabel!=null && lastNameLabel != null) {
+					InsertStudent s = new InsertStudent(firstNameLabel.getText(), 
+							lastNameLabel.getText(), 
+							addressLabel.getText(), 
+							"asd", 
+							1, 
+							departmentLabel.getText(), 
+							emailLabel.getText(), 
+							phoneLabel.getText());
+				}
+					
 			}
 		});
 		button_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
