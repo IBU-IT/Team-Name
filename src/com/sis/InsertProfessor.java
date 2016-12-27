@@ -2,13 +2,13 @@ package com.sis;
 
 import java.sql.PreparedStatement;
 
-public class InsertStudent extends ConnectionToDatabase{
+public class InsertProfessor extends ConnectionToDatabase{
 	
-	public InsertStudent(String name, String lastName, String adress, String password, int year, String department, String email, String phone) {
+	public InsertProfessor(String name, String lastName, String adress, String password) {
 		try {
 			
 
-			String query = " insert into studentstable (id, Name, LastName, adress, password, year, department, email, phone)" + " values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String query = " insert into professorstable (id, Name, LastName, adress, password)" + " values (?, ?, ?, ?, ?)";
 
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
@@ -22,14 +22,6 @@ public class InsertStudent extends ConnectionToDatabase{
 			preparedStmt.setString(4, adress);
 
 			preparedStmt.setString(5, password);
-			
-			preparedStmt.setInt(6, year);
-			
-			preparedStmt.setString(7, department);
-			
-			preparedStmt.setString(8, email);
-			
-			preparedStmt.setString(9, phone);
 
 			preparedStmt.execute();
 			
@@ -39,7 +31,8 @@ public class InsertStudent extends ConnectionToDatabase{
 		} catch (Exception e) {
 			
 			System.out.println("ERROR while inserting into table. " + e);
+		}	
+		
 		}
-	}
 
 }
