@@ -41,6 +41,7 @@ public class ConnectionToDatabase {
 		try {
 
 			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
 			PreparedStatement stm = con.prepareStatement(query);
 			
 			stm.setInt(1, id);
@@ -64,9 +65,6 @@ public class ConnectionToDatabase {
 				String email = rs.getString("email");
 				
 				String phone = rs.getString("phone");
-
-				// print the results
-				//System.out.format("%s, %s, %s, %s\n", firstName, lastName, adress);
 				
 				studentArray[0] = String.valueOf(id);
 				studentArray[1] = firstName;
@@ -99,6 +97,7 @@ public class ConnectionToDatabase {
 		try {
 
 			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
 			PreparedStatement stm = con.prepareStatement(query);
 			
 			stm.setInt(1, studentID);
@@ -132,6 +131,7 @@ public class ConnectionToDatabase {
 		try {
 
 			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
 			PreparedStatement stm = con.prepareStatement(query);
 			
 			stm.setInt(1, id);
@@ -161,5 +161,122 @@ public class ConnectionToDatabase {
 		}
 		
 		return professorArray;
+	}
+	
+	
+	public static String[] RetrivePayementViaPayementID(int id){
+
+		String[] payementArray = new String[4];
+		
+		String query = " select * from payementstable where payementid=?";
+		
+		try {
+
+			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
+			PreparedStatement stm = con.prepareStatement(query);
+			
+			stm.setInt(1, id);
+			
+			ResultSet rs = stm.executeQuery();
+ 
+			while (rs.next()) {
+				
+				String studentID = rs.getString("studentid");
+				
+				String amount = rs.getString("amount");
+				
+				String date = rs.getString("date");
+				
+				payementArray[0] = String.valueOf(id);
+				payementArray[1] = studentID;
+				payementArray[2] = amount;
+				payementArray[3] = date;
+			
+			}
+
+		} catch (Exception e) {
+			
+			System.out.println("ERROR while retriving data from table ::::::>" + e);
+		}
+		
+		return payementArray;
+	}
+	
+	
+	public static String[] RetrivePayementViaStudentID(int id){
+
+		String[] payementArray = new String[4];
+		
+		String query = " select * from payementstable where studentid=?";
+		
+		try {
+
+			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
+			PreparedStatement stm = con.prepareStatement(query);
+			
+			stm.setInt(1, id);
+			
+			ResultSet rs = stm.executeQuery();
+ 
+			while (rs.next()) {
+				
+				String payementID = rs.getString("studentid");
+				
+				String amount = rs.getString("amount");
+				
+				String date = rs.getString("date");
+				
+				payementArray[0] = payementID;
+				payementArray[1] = String.valueOf(id);
+				payementArray[2] = amount;
+				payementArray[3] = date;
+			
+			}
+
+		} catch (Exception e) {
+			
+			System.out.println("ERROR while retriving data from table ::::::>" + e);
+		}
+		
+		return payementArray;
+	}
+	
+	
+	public static String[] RetriveMessageViaMessageID(int id){
+
+		String[] payementArray = new String[4];
+		
+		String query = " select * from messagestable where messageid=?";
+		
+		try {
+
+			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
+			PreparedStatement stm = con.prepareStatement(query);
+			
+			stm.setInt(1, id);
+			
+			ResultSet rs = stm.executeQuery();
+ 
+			while (rs.next()) {
+				
+				String message = rs.getString("message");
+				
+				String courseid = rs.getString("courseid");
+				
+				payementArray[0] = String.valueOf(id);
+				payementArray[1] = message;
+				payementArray[2] = courseid;
+			
+			}
+
+		} catch (Exception e) {
+			
+			System.out.println("ERROR while retriving data from table ::::::>" + e);
+		}
+		
+		return payementArray;
 	}
 }

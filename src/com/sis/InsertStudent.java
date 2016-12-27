@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 
 public class InsertStudent extends ConnectionToDatabase{
 	
-	public InsertStudent(String name, String lastName, String adress, String password, int year, String department, String email, String phone) {
+	public void InsertStudent(String name, String lastName, String adress, String password, int year, String department, String email, String phone) {
 		try {
 			
 
