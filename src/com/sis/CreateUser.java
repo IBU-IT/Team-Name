@@ -423,4 +423,9 @@ public class CreateUser {
 		
 		return names;
 	}
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 }
