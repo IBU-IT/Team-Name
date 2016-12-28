@@ -59,56 +59,6 @@ public class StudentDashboard {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 111, 192, 163);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-
-		JLabel lblDisreteMathematics = new JLabel("<HTML><U>Disrete mathematics</U></HTML>");
-		lblDisreteMathematics.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				labelclick(frame);
-			}
-		});
-
-		JLabel lblCourses = new JLabel("Courses");
-		lblCourses.setFont(new Font("Tahoma", Font.BOLD, 15));
-		panel.add(lblCourses);
-		lblDisreteMathematics.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblDisreteMathematics);
-
-		JLabel lblDiferentialEquations = new JLabel("<HTML><U>Diferential equations</U></HTML>");
-		lblDiferentialEquations.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				labelclick(frame);
-			}
-		});
-		lblDiferentialEquations.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblDiferentialEquations);
-
-		JLabel lblDigitalDesign = new JLabel("<HTML><U>Digital design</U></HTML>");
-		lblDigitalDesign.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				labelclick(frame);
-			}
-		});
-		lblDigitalDesign.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDigitalDesign.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblDigitalDesign);
-
-		JLabel lblObjectOrientedProgramming = new JLabel("<HTML><U>Object oriented programming</U></HTML>");
-		lblObjectOrientedProgramming.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				labelclick(frame);
-			}
-		});
-		lblObjectOrientedProgramming.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		panel.add(lblObjectOrientedProgramming);
-
 		JLabel lblWlcomeAdnanAhmic = new JLabel("Welcome Adnan Ahmic");
 		lblWlcomeAdnanAhmic.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblWlcomeAdnanAhmic.setBounds(25, 31, 214, 36);
@@ -158,29 +108,29 @@ public class StudentDashboard {
 		panel_1.add(lblDiscreteMathLession);
 		
 		JLabel lblGrades = new JLabel("Grades");
-		lblGrades.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
-		lblGrades.setBounds(76, 285, 70, 14);
+		lblGrades.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblGrades.setBounds(71, 201, 70, 14);
 		frame.getContentPane().add(lblGrades);
 		
 		JLabel lblAcademics = new JLabel("Attendance");
-		lblAcademics.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
-		lblAcademics.setBounds(61, 310, 95, 14);
+		lblAcademics.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblAcademics.setBounds(71, 156, 95, 14);
 		frame.getContentPane().add(lblAcademics);
 		
 		JLabel lblMessages = new JLabel("Messages");
-		lblMessages.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
-		lblMessages.setBounds(71, 335, 95, 14);
+		lblMessages.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblMessages.setBounds(71, 294, 95, 14);
 		frame.getContentPane().add(lblMessages);
 		
-		JLabel lblHome = new JLabel("Home");
-		lblHome.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
-		lblHome.setBounds(10, 86, 46, 14);
-		frame.getContentPane().add(lblHome);
+		JLabel lblNewLabel = new JLabel("Payment");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setBounds(71, 246, 70, 14);
+		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblCalendar = new JLabel("Calendar");
-		lblCalendar.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
-		lblCalendar.setBounds(76, 360, 70, 14);
-		frame.getContentPane().add(lblCalendar);
+		JLabel lblCourses = new JLabel("Courses");
+		lblCourses.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblCourses.setBounds(71, 111, 86, 14);
+		frame.getContentPane().add(lblCourses);
 
 	}
 
