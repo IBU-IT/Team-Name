@@ -37,11 +37,11 @@ public class CreateUser {
 	private JFrame frame;
 	private JTextField textField_6;
 	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_7;
+	private JTextField Firstname;
+	private JTextField Lastname;
+	private JTextField Adress;
+	private JTextField Email;
+	private JTextField Phone;
 	private Dictionary<String, String> dic;
 	
 
@@ -212,20 +212,20 @@ public class CreateUser {
 		firstNameLabel.setBounds(10, 58, 73, 14);
 		panel_1.add(firstNameLabel);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(126, 56, 159, 20);
-		panel_1.add(textField_1);
+		Firstname = new JTextField();
+		Firstname.setColumns(10);
+		Firstname.setBounds(126, 56, 159, 20);
+		panel_1.add(Firstname);
 		
 		JLabel lastNameLabel = new JLabel("Last name");
 		lastNameLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lastNameLabel.setBounds(10, 89, 73, 14);
 		panel_1.add(lastNameLabel);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(126, 87, 159, 20);
-		panel_1.add(textField_2);
+		Lastname = new JTextField();
+		Lastname.setColumns(10);
+		Lastname.setBounds(126, 87, 159, 20);
+		panel_1.add(Lastname);
 		
 		JLabel dateLabel = new JLabel("Date of birth");
 		dateLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -256,31 +256,31 @@ public class CreateUser {
 		emailLabel.setBounds(10, 274, 46, 14);
 		panel_1.add(emailLabel);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(126, 247, 159, 20);
-		panel_1.add(textField_4);
+		Adress = new JTextField();
+		Adress.setColumns(10);
+		Adress.setBounds(126, 247, 159, 20);
+		panel_1.add(Adress);
 		
 		JLabel phoneLabel = new JLabel("Phone");
 		phoneLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		phoneLabel.setBounds(10, 299, 46, 14);
 		panel_1.add(phoneLabel);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(126, 272, 159, 20);
+		Email = new JTextField();
+		Email.setColumns(10);
+		Email.setBounds(126, 272, 159, 20);
 		
-		panel_1.add(textField_5);
+		panel_1.add(Email);
 		
-		JLabel addressLabel = new JLabel("Address");
+		JLabel addressLabel = new JLabel("Adress");
 		addressLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		addressLabel.setBounds(10, 249, 46, 14);
 		panel_1.add(addressLabel);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(126, 297, 159, 20);
-		panel_1.add(textField_7);
+		Phone = new JTextField();
+		Phone.setColumns(10);
+		Phone.setBounds(126, 297, 159, 20);
+		panel_1.add(Phone);
 		
 		JLabel departmentLabel = new JLabel("Department");
 		departmentLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));

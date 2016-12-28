@@ -47,17 +47,17 @@ public class StudentSite {
 	private void initialize() {
 		frmLogin = new JFrame();
 		frmLogin.setTitle("Login");
-		frmLogin.setBounds(100, 100, 458, 303);
+		frmLogin.setBounds(100, 100, 631, 576);
 		frmLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmLogin.getContentPane().setLayout(null);
 		
 		studentidTB = new JTextField();
-		studentidTB.setBounds(211, 95, 165, 20);
+		studentidTB.setBounds(211, 222, 165, 20);
 		frmLogin.getContentPane().add(studentidTB);
 		studentidTB.setColumns(10);
 		
 		passwordTB = new JTextField();
-		passwordTB.setBounds(211, 147, 165, 20);
+		passwordTB.setBounds(211, 275, 165, 20);
 		frmLogin.getContentPane().add(passwordTB);
 		passwordTB.setColumns(10);
 		
@@ -89,12 +89,16 @@ public class StudentSite {
 			}
 		});
 		
-		submitBtn.setBounds(287, 209, 89, 23);
+		submitBtn.setBounds(393, 94, 89, 23);
 		frmLogin.getContentPane().add(submitBtn);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\background.jpg"));
-		lblNewLabel.setBounds(0, 0, 442, 264);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\15730843_746693345482056_948976948_n.jpg"));
+		lblNewLabel.setBounds(0, 0, 615, 537);
 		frmLogin.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(0, 0, 46, 14);
+		frmLogin.getContentPane().add(lblNewLabel_1);
 	}
 }
