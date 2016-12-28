@@ -301,23 +301,18 @@ public class CreateUser {
 		label_11.setBounds(304, 132, -346, 30);
 		panel_1.add(label_11);
 		
-		JButton button = new JButton("Add new");
-		button.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button.setBounds(10, 343, 89, 23);
-		panel_1.add(button);
-		
-		JButton button_1 = new JButton("Update");
-		button_1.addActionListener(new ActionListener() {
+		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-		button_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_1.setBounds(109, 343, 89, 23);
-		panel_1.add(button_1);
+		btnUpdate.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnUpdate.setBounds(127, 343, 89, 23);
+		panel_1.add(btnUpdate);
 		
-		JButton button_2 = new JButton("Save");
-		button_2.addActionListener(new ActionListener() {
+		JButton btnInsert = new JButton("Insert");
+		btnInsert.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				if (firstNameLabel!=null && lastNameLabel != null) {
@@ -333,24 +328,19 @@ public class CreateUser {
 					
 			}
 		});
-		button_2.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_2.setBounds(208, 343, 89, 23);
-		panel_1.add(button_2);
+		btnInsert.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnInsert.setBounds(33, 343, 89, 23);
+		panel_1.add(btnInsert);
 		
-		JButton button_3 = new JButton("Delete");
-		button_3.addActionListener(new ActionListener() {
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 			}
 		});
-		button_3.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_3.setBounds(304, 343, 89, 23);
-		panel_1.add(button_3);
-		
-		JButton button_4 = new JButton("Add picture");
-		button_4.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		button_4.setBounds(387, 170, 105, 23);
-		panel_1.add(button_4);
+		btnDelete.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnDelete.setBounds(222, 343, 89, 23);
+		panel_1.add(btnDelete);
 		
 		JLabel lblStudentForm = new JLabel("Student form");
 		lblStudentForm.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -403,7 +393,7 @@ public class CreateUser {
 			
 		});
 		btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnCancel.setBounds(403, 343, 89, 23);
+		btnCancel.setBounds(316, 343, 89, 23);
 		panel_1.add(btnCancel);
 		
 		JDateChooser dateChooser = new JDateChooser();
