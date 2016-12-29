@@ -25,7 +25,7 @@ public class ProfessorMenuu extends JFrame {
 			public void run() {
 				try {
 					ProfessorMenuu window = new ProfessorMenuu();
-					window.setVisible(true);
+					//window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -50,6 +50,15 @@ public class ProfessorMenuu extends JFrame {
 		btnSearchStudent.setBounds(427, 415, 150, 23);
 		frame.getContentPane().add(btnSearchStudent);
 		
+		btnSearchStudent.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				SearchStudent.init();
+				
+			}
+		});
+		
 		JButton btnAddStudent = new JButton("Add Student");
 		btnAddStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -60,6 +69,15 @@ public class ProfessorMenuu extends JFrame {
 		btnAddStudent.setBackground(new Color(148,196,108));
 		btnAddStudent.setBounds(81, 415, 150, 23);
 		frame.getContentPane().add(btnAddStudent);
+		
+		btnAddStudent.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				CreateUser.init();
+				
+			}
+		});
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\15731437_746703492147708_1514733347_n.jpg"));

@@ -50,10 +50,103 @@ public class CreateUser {
 	 */
 	public static void main(String[] args) {
 		
+		Department Architecture = new Department("Architecture", 1);
+		Department Architecture2 = new Department("Architecture", 2);
+		Department Architecture3 = new Department("Architecture", 3);
+		Department Architecture4 = new Department("Architecture", 4);
+		Department Architecture5 = new Department("Architecture", 5);
+		
+		Course Drawings = new Course("Drawings I", Architecture);
+		Course ArhitecturalDesign = new Course("Arhitectural Design", Architecture);
+		Course ArhitecturalHistory = new Course("Arhitectural History", Architecture);
+		Course ArhitecturalStructures = new Course("Arhitectural Structures", Architecture);
+		Course StrengthofMaterials = new Course("Strength of Materials", Architecture);
+		
+		Course BasicDesign = new Course("Basic Design", Architecture2);
+		Course HistoryOfDesign = new Course("History Of Design", Architecture2);
+		Course ArhitecturalDesignII = new Course("Arhitectural Design II", Architecture2);
+		Course FreehandDrawing = new Course("Freehand Drawind", Architecture2);
+		Course BuildingMaterials = new Course("Building Materials", Architecture2);
+		
+		Course GraphicCommunication = new Course("GraphicCommunication", Architecture3);
+		Course BuildingTechnology = new Course("Building Technology", Architecture3);
+		Course ArhitecturalDesignIII = new Course("Arhitectural Design II", Architecture3);
+		Course DesignMethods = new Course("Design Methods", Architecture3);
+		Course Entrepreneurship = new Course("Entrepreneurship", Architecture3);
+		
+		Course StrengthofMaterialsII = new Course(" Strength of Materials II", Architecture4);
+		Course DesignMethodsII = new Course("Design Methods II", Architecture4);
+		Course ArhitecturalStructuresII = new Course("Arhitectural Structures II", Architecture4);
+		Course UrbanDesign = new Course("UrbanDesign", Architecture4);
+		Course BuildingMaterialsII = new Course("Building Materials II", Architecture4);
+		
+		Course CityPlaning = new Course("City Planing", Architecture5);
+		Course BuildingConstruction = new Course("Building Construction", Architecture5);
+		Course Structures = new Course("Structures", Architecture5);
+		Course ArhitecturalDesignIV = new Course("Arhitectural Design IV", Architecture5);
+		
+		
+		Department IT = new Department("IT", 1);
+		Department IT2 = new Department("IT", 2);
+		Department IT3 = new Department("IT", 3 );
+		Department IT4 = new Department("IT", 4 );
+		Department IT5 = new Department("IT", 5 );
+		
+		
+		Course ProgrammingI  = new Course("Programming I", IT);
+		Course CalculusI = new Course("Calculus I",IT);
+		Course TurkishLanguage = new Course("Turkish Language I",IT);
+		Course GeneralPhysics  = new Course("General Physics I", IT);
+		Course EnglishLanguageI = new Course ("English Language I",IT);
+		
+
+		Course ProgrammingII = new Course ("Programming II",IT2);
+		Course CalculusII = new Course ("Calculus II",IT2);
+		Course GeneralPhysicsII = new Course ("General Physics II",IT2);
+		Course TurskihLanguageII = new Course ("Turkish Language II",IT2);
+		Course EnglishLanguageII = new Course ("English Language II",IT2);
+		
+
+
+		Course DigitalDesign = new Course ("Digital Design",IT3);
+		Course DatabaseSystems = new Course ("Database System",IT3);
+		Course DiscreteMathematics = new Course ("Discrete Mathematics",IT3);
+		Course DifferentialEquations = new Course ("Differential Equations",IT3);
+		Course IndustrialTrainingI = new Course ("Industrial Training I",IT3);
 		
 		
 		
+		Course NumericalAnalysis= new Course ("Numerical Analysis",IT4);
+		Course ComputerOrganization = new Course ("Computer Organization",IT4);
+		Course ProgrammingLanguages = new Course ("Programming Languages",IT4);
+		Course DataStructures = new Course ("Data Structures",IT4);
 		
+		
+		Course OperatingSystems = new Course ("Operating Systems",IT5);
+		Course ComputerNetworks = new Course ("Computer Networks",IT5);
+		Course IndustrialTrainingII = new Course ("Industrial Training II",IT5);
+		Course MajorElectiveCourseI = new Course ("Major Elective Course I",IT5);
+		Course MajorElectiveCourseII  = new Course ("Major Elective Course II",IT5);
+		Course MajorElectiveCourseIII = new Course ("Major Elective Course III",IT5);
+		
+		
+
+		
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					
+					CreateUser window = new CreateUser();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public static void init() {
 		Department Architecture = new Department("Architecture", 1);
 		Department Architecture2 = new Department("Architecture", 2);
 		Department Architecture3 = new Department("Architecture", 3);

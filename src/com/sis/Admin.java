@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 
-public class StudentSite {
+public class Admin {
 	
 	private static void setUIFont(javax.swing.plaf.FontUIResource f)
 	{
@@ -58,7 +58,7 @@ public class StudentSite {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentSite window = new StudentSite();
+					Admin window = new Admin();
 					window.frmLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -83,7 +83,7 @@ public class StudentSite {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StudentSite window = new StudentSite();
+					Admin window = new Admin();
 					window.frmLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -95,7 +95,7 @@ public class StudentSite {
 	/**
 	 * Create the application.
 	 */
-	public StudentSite() {
+	public Admin() {
 		initialize();
 	}
 

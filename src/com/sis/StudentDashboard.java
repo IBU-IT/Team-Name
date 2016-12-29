@@ -117,6 +117,15 @@ public class StudentDashboard {
 		lblAcademics.setBounds(71, 156, 95, 14);
 		frame.getContentPane().add(lblAcademics);
 		
+		lblAcademics.addMouseListener(new MouseAdapter()  
+		{  
+		    public void mouseClicked(MouseEvent e)  
+		    {  
+		       
+
+		    }  
+		}); 
+		
 		JLabel lblMessages = new JLabel("Messages");
 		lblMessages.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblMessages.setBounds(71, 294, 95, 14);
