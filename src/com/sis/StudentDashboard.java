@@ -69,34 +69,44 @@ public class StudentDashboard {
 		frame.getContentPane().add(lblRzultat);
 		
 		JButton btnMessages = new JButton("Messages");
-		btnMessages.setBounds(57, 262, 89, 23);
+		btnMessages.setForeground(Color.WHITE);
+		btnMessages.setBackground(new Color(148,196,108));
+		btnMessages.setBounds(47, 262, 106, 23);
 		frame.getContentPane().add(btnMessages);
 		
 		JButton btnPayment = new JButton("Payment");
+		btnPayment.setForeground(Color.WHITE);
+		btnPayment.setBackground(new Color(148,196,108));
+		btnPayment.setBounds(47, 228, 106, 23);
+		frame.getContentPane().add(btnPayment);
 		btnPayment.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnPayment.setBounds(57, 228, 89, 23);
-		frame.getContentPane().add(btnPayment);
+	
 		
 		JButton btnGrades = new JButton("Grades");
-		btnGrades.setBounds(57, 194, 89, 23);
+		btnGrades.setForeground(Color.WHITE);
+		btnGrades.setBackground(new Color(148,196,108));
+		btnGrades.setBounds(47, 194, 106, 23);
 		frame.getContentPane().add(btnGrades);
 		
 		JButton btnAttendance = new JButton("Attendance");
+		btnAttendance.setForeground(Color.WHITE);
+		btnAttendance.setBackground(new Color(148,196,108));
 		btnAttendance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ConnectionToDatabase connectionToDatabase = new ConnectionToDatabase();
 				List<String> attend = connectionToDatabase.RetrieveAttendence();
 			}
 		});
-		btnAttendance.setBounds(57, 155, 89, 23);
+		btnAttendance.setBounds(47, 155, 106, 23);
 		frame.getContentPane().add(btnAttendance);
 		
 		JButton btnCourses = new JButton("Courses");
-		
-		btnCourses.setBounds(57, 121, 89, 23);
+		btnCourses.setForeground(Color.WHITE);
+		btnCourses.setBackground(new Color(148,196,108));
+		btnCourses.setBounds(47, 121, 106, 23);
 		frame.getContentPane().add(btnCourses);
 		
 		JLabel label_1 = new JLabel("");

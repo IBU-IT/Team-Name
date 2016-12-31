@@ -1,5 +1,6 @@
 package com.sis;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -38,18 +39,26 @@ public class AddCourseJP extends JPanel {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblCourseId = new JLabel("Semester");
+		lblCourseId.setForeground(Color.WHITE);
+		lblCourseId.setBackground(new Color(148,196,108));
 		lblCourseId.setBounds(10, 198, 57, 14);
 		frame.getContentPane().add(lblCourseId);
 		
 		JLabel lblCourse = new JLabel("Course");
+		lblCourse.setForeground(Color.WHITE);
+		lblCourse.setBackground(new Color(148,196,108));
 		lblCourse.setBounds(10, 223, 46, 14);
 		frame.getContentPane().add(lblCourse);
 		
 		JLabel lblYear = new JLabel("Year");
+		lblYear.setForeground(Color.WHITE);
+		lblYear.setBackground(new Color(148,196,108));
 		lblYear.setBounds(10, 248, 46, 14);
 		frame.getContentPane().add(lblYear);
 		
 		JLabel lblDepartment = new JLabel("Department");
+		lblDepartment.setForeground(Color.WHITE);
+		lblDepartment.setBackground(new Color(148,196,108));
 		lblDepartment.setBounds(10, 271, 71, 14);
 		frame.getContentPane().add(lblDepartment);
 		
@@ -74,6 +83,8 @@ public class AddCourseJP extends JPanel {
 		department.setColumns(10);
 		
 		JButton btnSave = new JButton("Save");
+		btnSave.setForeground(Color.WHITE);
+		btnSave.setBackground(new Color(148,196,108));
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (!semester.getText().equals("") && !course.getText().equals("") && !year.getText().equals("")) {

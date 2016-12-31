@@ -1,5 +1,6 @@
 package com.sis;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -38,6 +39,7 @@ public class AddProfessorJP extends JPanel {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblProfessorId = new JLabel("Professor ID");
+		
 		lblProfessorId.setBounds(23, 208, 92, 14);
 		frame.getContentPane().add(lblProfessorId);
 		
@@ -47,6 +49,8 @@ public class AddProfessorJP extends JPanel {
 		profesorID.setColumns(10);
 		
 		JLabel lblName = new JLabel("Name");
+		lblName.setForeground(Color.WHITE);
+		lblName.setBackground(new Color(148,196,108));
 		lblName.setBounds(23, 242, 66, 14);
 		frame.getContentPane().add(lblName);
 		
@@ -56,10 +60,14 @@ public class AddProfessorJP extends JPanel {
 		name.setColumns(10);
 		
 		JLabel lblLastName = new JLabel("Last Name");
+		lblLastName.setForeground(Color.WHITE);
+		lblLastName.setBackground(new Color(148,196,108));
 		lblLastName.setBounds(23, 276, 66, 14);
 		frame.getContentPane().add(lblLastName);
 		
 		JLabel lblAdress = new JLabel("Adress");
+		lblAdress.setForeground(Color.WHITE);
+		lblAdress.setBackground(new Color(148,196,108));
 		lblAdress.setBounds(23, 301, 46, 14);
 		frame.getContentPane().add(lblAdress);
 		
@@ -74,6 +82,8 @@ public class AddProfessorJP extends JPanel {
 		address.setColumns(10);
 		
 		JButton btnSave = new JButton("Save");
+		btnSave.setForeground(Color.WHITE);
+		btnSave.setBackground(new Color(148,196,108));
 		btnSave.addActionListener(new ActionListener() {
 			// kreiranje profesora
 			public void actionPerformed(ActionEvent e) {
