@@ -108,7 +108,7 @@ public class Login {
 		group.add(rdbtnStudent);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\\u0111.jpg"));
+		label.setIcon(new ImageIcon("u0111.jpg"));
 		label.setBounds(0, 0, 628, 524);
 		frame.getContentPane().add(label);
 		

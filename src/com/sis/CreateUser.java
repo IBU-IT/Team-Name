@@ -482,7 +482,7 @@ public class CreateUser {
 		textField.setColumns(10);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\t.png"));
+		label.setIcon(new ImageIcon("t.png"));
 		label.setBounds(0, 0, 620, 467);
 		panel_1.add(label);
 		

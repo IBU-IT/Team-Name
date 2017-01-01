@@ -90,7 +90,7 @@ public class AddProfessorJP extends JPanel {
 		frame.getContentPane().add(btnSave);
 		
 		JLabel lblBackprof = new JLabel("backProf");
-		lblBackprof.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\t.png"));
+		lblBackprof.setIcon(new ImageIcon("t.png"));
 		lblBackprof.setBounds(0, 0, 621, 512);
 		frame.getContentPane().add(lblBackprof);
 

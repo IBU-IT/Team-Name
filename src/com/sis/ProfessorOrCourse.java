@@ -59,7 +59,7 @@ public class ProfessorOrCourse extends JPanel {
 		frame.getContentPane().add(btnAddCourse);
 		
 		JLabel backroundProfOrCour = new JLabel("");
-		backroundProfOrCour.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\ProfOrCOurse.jpg"));
+		backroundProfOrCour.setIcon(new ImageIcon("ProfOrCOurse.jpg"));
 		backroundProfOrCour.setBounds(0, 0, 631, 512);
 		frame.getContentPane().add(backroundProfOrCour);
 

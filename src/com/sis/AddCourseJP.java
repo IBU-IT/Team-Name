@@ -101,7 +101,7 @@ public class AddCourseJP extends JPanel {
 		frame.getContentPane().add(btnSave);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\t.png"));
+		label.setIcon(new ImageIcon("t.png"));
 		label.setBounds(0, 0, 621, 512);
 		frame.getContentPane().add(label);
 

@@ -136,7 +136,7 @@ public class UpdateStudentJP {
 			public void run() {
 				try {
 					
-					CreateUser window = new CreateUser();
+					UpdateStudentJP window = new UpdateStudentJP();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -233,7 +233,7 @@ public class UpdateStudentJP {
 			public void run() {
 				try {
 					
-					CreateUser window = new CreateUser();
+					UpdateStudentJP window = new UpdateStudentJP();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -369,7 +369,7 @@ public class UpdateStudentJP {
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				UpdateStudentDb updateStudentDb = new UpdateStudentDb(studentId, name, lastName, adress, password, year, department, email, phone);
+				//UpdateStudentDb updateStudentDb = new UpdateStudentDb(studentId, name, lastName, adress, password, year, department, email, phone);
 				
 			}
 		});
@@ -485,7 +485,7 @@ public class UpdateStudentJP {
 		textField.setColumns(10);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\t.png"));
+		label.setIcon(new ImageIcon("t.png"));
 		label.setBounds(0, 0, 620, 467);
 		panel_1.add(label);
 		

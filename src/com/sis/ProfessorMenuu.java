@@ -83,7 +83,7 @@ public class ProfessorMenuu extends JFrame {
 		});
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\15731437_746703492147708_1514733347_n.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("15731437_746703492147708_1514733347_n.jpg"));
 		lblNewLabel.setBounds(0, 0, 621, 512);
 		frame.getContentPane().add(lblNewLabel);
 		

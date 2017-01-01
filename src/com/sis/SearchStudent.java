@@ -204,7 +204,7 @@ public class SearchStudent {
 		frmLogin.getContentPane().add(submitBtn);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\15730843_746693345482056_948976948_n.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("15730843_746693345482056_948976948_n.jpg"));
 		lblNewLabel.setBounds(0, 0, 615, 537);
 		frmLogin.getContentPane().add(lblNewLabel);
 		

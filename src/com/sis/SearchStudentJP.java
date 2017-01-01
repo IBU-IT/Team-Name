@@ -172,15 +172,14 @@ public class SearchStudentJP extends JFrame {
 		});
 		
 		JLabel lblSearchStudent = new JLabel("");
-		lblSearchStudent.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\\u0107\u0107.png"));
+		lblSearchStudent.setIcon(new ImageIcon("u0107.png"));
 		lblSearchStudent.setBounds(0, 5, 561, 499);
 		contentPane.add(lblSearchStudent);
 		
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ConnectionToDatabase connectionToDatabase = new ConnectionToDatabase();
 				try {
-					String[] student = connectionToDatabase.RetriveStudent(Integer.parseInt(studentid.getText()));
+					String[] student = ConnectionToDatabase.RetriveStudent(Integer.parseInt(studentid.getText()));
 					if (student == null) {
 						JOptionPane.showMessageDialog(null, "That student doesn't exists!");
 					} else {
