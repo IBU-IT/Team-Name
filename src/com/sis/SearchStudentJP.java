@@ -3,15 +3,20 @@ package com.sis;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.FontFormatException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.FontUIResource;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
@@ -32,6 +37,17 @@ public class SearchStudentJP extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+File font_file = new File("Roboto-Regular.ttf");
+		
+		try {
+			setUIFont (new javax.swing.plaf.FontUIResource(Font.createFont(Font.TRUETYPE_FONT, font_file).deriveFont(17f)));
+		} catch (FontFormatException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -42,6 +58,11 @@ public class SearchStudentJP extends JFrame {
 				}
 			}
 		});
+	}
+
+	private static void setUIFont(FontUIResource fontUIResource) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**
@@ -56,6 +77,8 @@ public class SearchStudentJP extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.setForeground(Color.WHITE);
+		btnUpdate.setBackground(new Color(148,196,108));
 		
 		btnUpdate.setBounds(112, 470, 89, 23);
 		contentPane.add(btnUpdate);
@@ -158,6 +181,8 @@ public class SearchStudentJP extends JFrame {
 		});
 		btnDelete.setBounds(211, 470, 89, 23);
 		contentPane.add(btnDelete);
+		btnDelete.setForeground(Color.WHITE);
+		btnDelete.setBackground(new Color(148,196,108));
 		
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

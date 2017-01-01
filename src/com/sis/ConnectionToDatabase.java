@@ -6,6 +6,7 @@ import java.util.List;
 
 public class ConnectionToDatabase {
 	
+	
 	static final String DBuser = "a158cb_oop";
 	static final String DBpassword = "adminadmin123";
 	static final String DBurl = "jdbc:mysql://mysql5006.smarterasp.net:3306/db_a158cb_oop";

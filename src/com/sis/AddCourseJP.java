@@ -2,6 +2,8 @@ package com.sis;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.FontFormatException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -9,8 +11,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
+import javax.swing.plaf.FontUIResource;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 // ne traba year
@@ -22,6 +27,17 @@ public class AddCourseJP extends JPanel {
 	private JTextField department;
 
 	public static void main(String[] args) {
+File font_file = new File("Roboto-Regular.ttf");
+		
+		try {
+			setUIFont (new javax.swing.plaf.FontUIResource(Font.createFont(Font.TRUETYPE_FONT, font_file).deriveFont(17f)));
+		} catch (FontFormatException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -32,6 +48,10 @@ public class AddCourseJP extends JPanel {
 				}
 			}
 		});
+	}
+	private static void setUIFont(FontUIResource fontUIResource) {
+		// TODO Auto-generated method stub
+		
 	}
 	public AddCourseJP() {
 		JFrame frame = new JFrame ("Add a Course");

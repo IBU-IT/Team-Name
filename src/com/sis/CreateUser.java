@@ -12,7 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.FontFormatException;
+
 import javax.swing.JTextField;
+import javax.swing.plaf.FontUIResource;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -27,6 +30,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,6 +56,17 @@ public class CreateUser {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+File font_file = new File("Roboto-Regular.ttf");
+		
+		try {
+			setUIFont (new javax.swing.plaf.FontUIResource(Font.createFont(Font.TRUETYPE_FONT, font_file).deriveFont(17f)));
+		} catch (FontFormatException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		Department Architecture = new Department("Architecture", 1);
 		Department Architecture2 = new Department("Architecture", 2);
@@ -148,6 +164,11 @@ public class CreateUser {
 		});
 	}
 	
+	private static void setUIFont(FontUIResource fontUIResource) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public static void init() {
 		Department Architecture = new Department("Architecture", 1);
 		Department Architecture2 = new Department("Architecture", 2);

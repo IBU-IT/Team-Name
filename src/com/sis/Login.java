@@ -4,10 +4,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.plaf.FontUIResource;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -25,6 +30,17 @@ public class Login {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+File font_file = new File("Roboto-Regular.ttf");
+		
+		try {
+			setUIFont (new javax.swing.plaf.FontUIResource(Font.createFont(Font.TRUETYPE_FONT, font_file).deriveFont(17f)));
+		} catch (FontFormatException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -35,6 +51,11 @@ public class Login {
 				}
 			}
 		});
+	}
+
+	private static void setUIFont(FontUIResource fontUIResource) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**

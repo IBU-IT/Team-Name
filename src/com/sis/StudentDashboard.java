@@ -11,12 +11,18 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.FontFormatException;
+
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.awt.GridLayout;
 import javax.swing.border.LineBorder;
+import javax.swing.plaf.FontUIResource;
+
 import java.awt.Color;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
@@ -36,6 +42,17 @@ public class StudentDashboard {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+File font_file = new File("Roboto-Regular.ttf");
+		
+		try {
+			setUIFont (new javax.swing.plaf.FontUIResource(Font.createFont(Font.TRUETYPE_FONT, font_file).deriveFont(17f)));
+		} catch (FontFormatException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -46,6 +63,11 @@ public class StudentDashboard {
 				}
 			}
 		});
+	}
+
+	private static void setUIFont(FontUIResource fontUIResource) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	/**
