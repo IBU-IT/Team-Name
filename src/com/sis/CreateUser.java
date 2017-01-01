@@ -9,6 +9,8 @@ import java.util.Dictionary;
 import java.util.List;
 import java.awt.FlowLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 
@@ -370,18 +372,6 @@ public class CreateUser {
 		label_11.setBounds(304, 132, -346, 30);
 		panel_1.add(label_11);
 		
-		JButton btnUpdate = new JButton("Update");
-		btnUpdate.setForeground(Color.WHITE);
-		btnUpdate.setBackground(new Color(148,196,108));
-		btnUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnUpdate.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnUpdate.setBounds(126, 382, 85, 25);
-		panel_1.add(btnUpdate);
-		
 		JButton btnInsert = new JButton("Insert");
 		btnInsert.setForeground(Color.WHITE);
 		btnInsert.setBackground(new Color(148,196,108));
@@ -402,20 +392,8 @@ public class CreateUser {
 			}
 		});
 		btnInsert.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnInsert.setBounds(31, 382, 84, 25);
+		btnInsert.setBounds(79, 382, 84, 25);
 		panel_1.add(btnInsert);
-		
-		JButton btnDelete = new JButton("Delete");
-		btnDelete.setForeground(Color.WHITE);
-		btnDelete.setBackground(new Color(148,196,108));
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnDelete.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnDelete.setBounds(221, 382, 84, 25);
-		panel_1.add(btnDelete);
 		
 		JLabel lblStudentForm = new JLabel("Student form");
 		lblStudentForm.setForeground(Color.WHITE);
@@ -471,7 +449,7 @@ public class CreateUser {
 			
 		});
 		btnCancel.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnCancel.setBounds(315, 382, 84, 25);
+		btnCancel.setBounds(163, 382, 84, 25);
 		panel_1.add(btnCancel);
 		
 		JDateChooser dateChooser = new JDateChooser();
