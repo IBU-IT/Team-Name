@@ -372,7 +372,6 @@ public class CreateUser {
 		label_11.setBounds(304, 132, -346, 30);
 		panel_1.add(label_11);
 		
-<<<<<<< HEAD
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.setForeground(Color.WHITE);
 		btnUpdate.setBackground(new Color(148,196,108));
@@ -387,8 +386,6 @@ public class CreateUser {
 		btnUpdate.setBounds(126, 382, 85, 25);
 		panel_1.add(btnUpdate);
 		
-=======
->>>>>>> branch 'master' of https://github.com/IBU-IT/Team-Name.git
 		JButton btnInsert = new JButton("Insert");
 		btnInsert.setForeground(Color.WHITE);
 		btnInsert.setBackground(new Color(148,196,108));
