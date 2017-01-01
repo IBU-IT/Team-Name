@@ -13,13 +13,13 @@ public class ConnectionToDatabase {
 	
 	public static void main(String[] args) {
 		
-		InsertStudent st = new InsertStudent("Adnan", "Admic", "Visoko", "pw", 2, "IT", "adnan.ahmic@stu.ibu.edu.ba", "062123456");
-		
-		DBAttendence.InsertAttendence(301015, 0, "99");
-		String[] s = RetriveProfessor(1);
-			for(int i = 0; i<s.length; i++){
-				System.out.println(s[i]);
-			}
+//		InsertStudent st = new InsertStudent("Adnan", "Admic", "Visoko", "pw", 2, "IT", "adnan.ahmic@stu.ibu.edu.ba", "062123456");
+//		
+//		DBAttendence.InsertAttendence(301015, 0, "99");
+//		String[] s = RetriveProfessor(1);
+//			for(int i = 0; i<s.length; i++){
+//				System.out.println(s[i]);
+//			}
 			}
 	
 	

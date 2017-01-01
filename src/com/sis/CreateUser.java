@@ -376,7 +376,7 @@ public class CreateUser {
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				System.out.println("epdate");
+				//UpdateStudentDb updateStudentDb = new UpdateStudentDb(studentId, name, lastName, adress, password, year, department, email, phone);
 				
 			}
 		});
