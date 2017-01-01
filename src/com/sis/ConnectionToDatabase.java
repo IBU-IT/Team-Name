@@ -12,7 +12,6 @@ public class ConnectionToDatabase {
 	public static Connection con = null;
 	
 	public static void main(String[] args) {
-		
 //		InsertStudent st = new InsertStudent("Adnan", "Admic", "Visoko", "pw", 2, "IT", "adnan.ahmic@stu.ibu.edu.ba", "062123456");
 //		
 //		DBAttendence.InsertAttendence(301015, 0, "99");
@@ -453,5 +452,53 @@ public class ConnectionToDatabase {
 		}
 		
 		return attendence;
+	}
+	public boolean UpdateStudent(String studentID, String name, String lastName, String adress, int year, String department, String email) {
+		try {
+			
+
+			String query = " update studentstable set Name = ?, LastName = ?, adress = ?, year = ?, department = ?, email = ? where id = ?";
+
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+
+			
+			preparedStmt.setString(1, name);
+			
+			preparedStmt.setString(2, lastName);
+			
+			preparedStmt.setString(3, adress);
+
+			preparedStmt.setInt(4, year);
+
+			preparedStmt.setString(5, department);
+			
+			preparedStmt.setString(6, email);
+			
+			preparedStmt.setString(7, studentID);
+
+			return preparedStmt.execute();
+			
+		} catch (Exception e) {
+			
+			System.out.println("ERROR while updating table. " + e);
+			return false;
+		}
+	}
+	
+	public boolean DeleteStudent(String studentID) {
+		try {
+			
+
+			String query = " delete from studentstable where id = ?";
+
+			PreparedStatement preparedStmt = con.prepareStatement(query);
+
+			
+			preparedStmt.setString(1, studentID);
+			return preparedStmt.execute();
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
 	}
 }

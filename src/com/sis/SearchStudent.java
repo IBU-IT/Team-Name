@@ -80,16 +80,7 @@ public class SearchStudent {
 			e1.printStackTrace();
 		}
 		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					SearchStudent window = new SearchStudent();
-					window.frmLogin.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		
 	}
 
 	/**

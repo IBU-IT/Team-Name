@@ -32,7 +32,10 @@ public class Admin {
 	        {
 	            UIManager.put(key, f);
 	        }
-	    }
+	    } String username;
+	    String password;
+	    
+	    
 	}
 
 	private JFrame frmLogin;
@@ -187,13 +190,24 @@ public class Admin {
 				System.out.println(arg0);
 				System.out.println(studentidTB.getText());
 				if (studentidTB.getText() != null || passwordTB.getText() != null) {
-					
-					if (passwordTB.getText().equals("admin")){
-						StudentDashboard studentDashboard = new StudentDashboard();
+
+					if (studentidTB.getText().equals("admin") && passwordTB.getText().equals("admin")) {
+						new ProfessorOrCourse().setVisible(true);
 						frmLogin.setVisible(false);
-						studentDashboard.showWindow();
+					} else {
+						String[] student = ConnectionToDatabase.RetriveStudent(Integer.parseInt(studentidTB.getText()));
 						
+						if (passwordTB.getText().equals(student[4])){
+							StudentDashboard studentDashboard = new StudentDashboard();
+							frmLogin.setVisible(false);
+							studentDashboard.showWindow();
+							System.out.println("done");
+						}
+						
+						System.out.println("pw and username are entered but not in db " + student[4]);
 					}
+					
+					
 				
 				}else {
 					greskaLBL.setText("You have to enter id and password");

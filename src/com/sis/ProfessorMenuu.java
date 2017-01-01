@@ -54,9 +54,12 @@ public class ProfessorMenuu extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				SearchStudent.init();
-				
+				SearchStudentJP.init();
+				SearchStudentJP prof = new SearchStudentJP();
+				prof.setVisible(true);
 			}
+				
+			
 		});
 		
 		JButton btnAddStudent = new JButton("Add Student");

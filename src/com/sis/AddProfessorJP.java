@@ -16,7 +16,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class AddProfessorJP extends JPanel {
-	private JTextField profesorID;
 	private JTextField name;
 	private JTextField lastname;
 	private JTextField address;
@@ -40,17 +39,7 @@ public class AddProfessorJP extends JPanel {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblProfessorId = new JLabel("Professor ID");
-		
-		lblProfessorId.setBounds(23, 208, 92, 14);
-		frame.getContentPane().add(lblProfessorId);
-		
-		profesorID = new JTextField();
-		profesorID.setBounds(125, 205, 120, 20);
-		frame.getContentPane().add(profesorID);
-		profesorID.setColumns(10);
-		
-		JLabel lblName = new JLabel("Name");
+		JLabel lblName = new JLabel("First Name");
 		lblName.setForeground(Color.WHITE);
 		lblName.setBackground(new Color(148,196,108));
 		lblName.setBounds(23, 242, 66, 14);
@@ -89,7 +78,7 @@ public class AddProfessorJP extends JPanel {
 		btnSave.addActionListener(new ActionListener() {
 			// kreiranje profesora
 			public void actionPerformed(ActionEvent e) {
-				if (!profesorID.getText().equals("") && !name.getText().equals("") && !lastname.getText().equals("")) {
+				if ( !name.getText().equals("") && !lastname.getText().equals("")) {
 					InsertProfessor professor = new InsertProfessor(name.getText(), lastname.getText(), address.getText(), name.getText());
 					JOptionPane.showMessageDialog(null, "Professor added");
 				} else {

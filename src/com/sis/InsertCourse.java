@@ -1,14 +1,28 @@
 package com.sis;
 
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class InsertCourse extends ConnectionToDatabase{
 	
+	public static void main(String[] args) {
+		
+		//InsertCourseDB("Programing", "2", "it", "4");
+		
+	}
+	
 	public InsertCourse(String course, String year, String department, String semester) {
+		
+		InsertCourseDB(course, year, department, semester);
+	}
+	
+	public static void InsertCourseDB(String course, String year, String department, String semester) {
 		try {
 			
 
 			String query = " insert into coursestable (courseid, course, year, department, semester)" + " values (?, ?, ?, ?, ?)";
+			
+			con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
 
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 
@@ -29,8 +43,7 @@ public class InsertCourse extends ConnectionToDatabase{
 			System.out.format("Table Updated");
 
 		} catch (Exception e) {
-			
-			System.out.println("ERROR while inserting into table. " + e);
+			e.printStackTrace();
 		}	
 		
 		}
