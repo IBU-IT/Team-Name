@@ -1,5 +1,7 @@
 package com.sis;
 
+// ne treba id ad pravis profa nego nek mu prikaze id kag ga snimi u databazu . nesto tipa Professor created name lastna name id. to uradi sa metodom za citanje i z baze
+// zavrsi dizajn, slka i centriraj u windowu stvari i cenriraj indov na displeju
 import java.awt.Color;
 import java.awt.EventQueue;
 
