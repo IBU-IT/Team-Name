@@ -6,16 +6,20 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 
 public class Login {
 
 	private JFrame frame;
-	private JTextField txtWelcomeToOur;
 
 	/**
 	 * Launch the application.
@@ -45,45 +49,55 @@ public class Login {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 644, 563);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		txtWelcomeToOur = new JTextField();
-		txtWelcomeToOur.setFont(new Font("Tahoma", Font.BOLD, 15));
-		txtWelcomeToOur.setForeground(Color.BLACK);
-		txtWelcomeToOur.setHorizontalAlignment(SwingConstants.CENTER);
-		txtWelcomeToOur.setText("Welcome to our Student information system");
-		txtWelcomeToOur.setBounds(29, 41, 359, 20);
-		frame.getContentPane().add(txtWelcomeToOur);
-		txtWelcomeToOur.setColumns(10);
-		
 		JLabel lblLoginAs = new JLabel("Login as : ");
-		lblLoginAs.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblLoginAs.setBounds(29, 126, 60, 14);
+		lblLoginAs.setForeground(Color.WHITE);
+		lblLoginAs.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblLoginAs.setBounds(69, 265, 89, 23);
 		frame.getContentPane().add(lblLoginAs);
 		
 		JButton btnContionue = new JButton("Continue");
 		btnContionue.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnContionue.setBounds(335, 227, 89, 23);
+		btnContionue.setForeground(Color.WHITE);
+		btnContionue.setBackground(new Color(148,196,108));
+		btnContionue.setBounds(470, 439, 114, 32);
 		frame.getContentPane().add(btnContionue);
 		
+		
 		JPanel panel = new JPanel();
-		panel.setBounds(104, 126, 172, 88);
+		panel.setBounds(167, 282, 172, 88);
+		panel.setBackground(new Color(148,196,108));
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JRadioButton rdbtnAdministrator = new JRadioButton("Administrator");
+		
+		
+		rdbtnAdministrator.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		rdbtnAdministrator.setForeground(Color.WHITE);
+		rdbtnAdministrator.setBackground(new Color(148,196,108));
+		
 		rdbtnAdministrator.setBounds(6, 0, 109, 23);
 		panel.add(rdbtnAdministrator);
-		rdbtnAdministrator.setFont(new Font("Tahoma", Font.PLAIN, 13));
+	
 		
-		JRadioButton rdbtnProffessor = new JRadioButton("Proffessor");
+		JRadioButton rdbtnProffessor = new JRadioButton("Professor");
+		rdbtnProffessor.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		rdbtnProffessor.setForeground(Color.WHITE);
+		rdbtnProffessor.setBackground(new Color(148,196,108));
+		
+		
 		rdbtnProffessor.setBounds(6, 26, 109, 23);
 		panel.add(rdbtnProffessor);
 		rdbtnProffessor.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		
 		JRadioButton rdbtnStudent = new JRadioButton("Student");
+		rdbtnStudent.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		rdbtnStudent.setForeground(Color.WHITE);
+		rdbtnStudent.setBackground(new Color(148,196,108));
 		rdbtnStudent.setBounds(6, 52, 109, 23);
 		panel.add(rdbtnStudent);
 		rdbtnStudent.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -92,5 +106,25 @@ public class Login {
 		group.add(rdbtnAdministrator);
 		group.add(rdbtnProffessor);
 		group.add(rdbtnStudent);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\nixx\\Desktop\\\u0111.jpg"));
+		label.setBounds(0, 0, 628, 524);
+		frame.getContentPane().add(label);
+		
+		btnContionue.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				if(rdbtnAdministrator.isSelected()) {
+					Admin.init();
+					
+				} else {
+					StudentSite.init();
+				}
+				
+			}
+		});
 	}
 }

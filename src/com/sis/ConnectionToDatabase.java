@@ -1,6 +1,8 @@
 package com.sis;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConnectionToDatabase {
 	
@@ -13,7 +15,7 @@ public class ConnectionToDatabase {
 		
 		InsertStudent st = new InsertStudent("Adnan", "Admic", "Visoko", "pw", 2, "IT", "adnan.ahmic@stu.ibu.edu.ba", "062123456");
 		
-		InsertAttendence a = new InsertAttendence(301015, 0, "99");
+		DBAttendence.InsertAttendence(301015, 0, "99");
 		String[] s = RetriveProfessor(1);
 			for(int i = 0; i<s.length; i++){
 				System.out.println(s[i]);
@@ -38,7 +40,7 @@ public class ConnectionToDatabase {
 	
 	public static String[] RetriveStudent(int id){
 
-		String[] studentArray = new String[9];
+		String[] studentArray = null;
 		
 		String query = " select * from StudentsTable where id=?";
 		
@@ -51,8 +53,10 @@ public class ConnectionToDatabase {
 			stm.setInt(1, id);
 			
 			ResultSet rs = stm.executeQuery();
+			
  
 			while (rs.next()) {
+				studentArray = new String[9];
 				
 				String firstName = rs.getString("name");
 				
@@ -327,6 +331,71 @@ public class ConnectionToDatabase {
 		return courseArray;
 	}
 	
+	public static String[] RetriveCourses(int year, String department){
+
+		List<String> courseArray = new ArrayList<String>();
+		
+		String query = " select * from coursestable where year=? and department=?";
+		
+		try {
+
+			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
+			PreparedStatement stm = con.prepareStatement(query);
+			
+			stm.setInt(1, year);
+			stm.setString(2, department);
+			
+			ResultSet rs = stm.executeQuery();
+		
+ 
+			while (rs.next()) {
+				
+				String course = rs.getString("course");
+				
+				courseArray.add(course);
+			
+			}
+
+		} catch (Exception e) {
+			
+			System.out.println("ERROR while retriving data from table ::::::>" + e);
+		}
+		
+		return (String[]) courseArray.toArray();
+	}
+	
+	public static List<String> RetriveCourses(){
+
+		List<String> courseArray = new ArrayList<String>();
+		
+		String query = " select * from coursestable";
+		
+		try {
+
+			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
+			PreparedStatement stm = con.prepareStatement(query);
+			
+			ResultSet rs = stm.executeQuery();
+		
+ 
+			while (rs.next()) {
+				
+				String course = rs.getString("course");
+				
+				courseArray.add(course);
+			
+			}
+
+		} catch (Exception e) {
+			
+			System.out.println("ERROR while retriving data from table ::::::>" + e);
+		}
+		
+		return courseArray;
+	}
+	
 	public static String RetrieveAttendence(int studentID, int courseID){
 
 		String attendence = null;
@@ -347,6 +416,34 @@ public class ConnectionToDatabase {
 			while (rs.next()) {
 				
 				attendence = rs.getString("attendence");
+			
+			}
+
+		} catch (Exception e) {
+			
+			System.out.println("ERROR while retriving data from table ::::::>" + e);
+		}
+		
+		return attendence;
+	}
+	
+	public static List<String> RetrieveAttendence(){
+
+		List<String> attendence = new ArrayList<String>();
+		
+		String query = " select c.course, a.attendence from atendencetable a, coursestable c where a.courseid = c.id";
+		
+		try {
+
+			Connection con = DriverManager.getConnection(DBurl, DBuser, DBpassword);
+			
+			PreparedStatement stm = con.prepareStatement(query);
+	
+			ResultSet rs = stm.executeQuery();
+ 
+			while (rs.next()) {
+				
+				attendence.add(rs.getString(0)+ " " + rs.getString(1));
 			
 			}
 
