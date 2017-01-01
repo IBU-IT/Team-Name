@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+// ne traba year
+
 public class AddCourseJP extends JPanel {
 	private JTextField semester;
 	private JTextField course;

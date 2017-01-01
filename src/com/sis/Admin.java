@@ -188,8 +188,9 @@ public class Admin {
 		submitBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println(arg0);
-				
+				System.out.println(studentidTB.getText());
 				if (studentidTB.getText() != null || passwordTB.getText() != null) {
+
 					if (studentidTB.getText().equals("admin") && passwordTB.getText().equals("admin")) {
 						new ProfessorOrCourse().setVisible(true);
 						frmLogin.setVisible(false);
@@ -209,10 +210,8 @@ public class Admin {
 					
 				
 				}else {
-					System.out.println("error");
 					greskaLBL.setText("You have to enter id and password");
-					
-					
+				
 				}
 				
 			}//actionPerformed

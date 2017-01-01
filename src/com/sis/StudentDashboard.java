@@ -96,8 +96,11 @@ public class StudentDashboard {
 		btnAttendance.setBackground(new Color(148,196,108));
 		btnAttendance.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ConnectionToDatabase connectionToDatabase = new ConnectionToDatabase();
-				List<String> attend = connectionToDatabase.RetrieveAttendence();
+				
+				// passujes studentID i courseID i dobijes attendecnce. izlistaj za svaki predmet koji student ima. to ti je par for lupova u
+				//kojima izlistas sav atendence za predmete iz semestra studenta (dobijes preko studenttabele, gledaj kod)
+				String attendence = ConnectionToDatabase.RetrieveAttendence(301015,1);
+				
 			}
 		});
 		btnAttendance.setBounds(47, 155, 106, 23);
